@@ -60,7 +60,9 @@
       <section class="hero-section">
         <div class="hero-container container">
           <h1 class="hero-title">Effective Solutions for Your Business</h1>
-          <button class="main-button" type="button">Order Service</button>
+          <button class="main-button" type="button" data-modal-open>
+            Order Service
+          </button>
         </div>
       </section>
       <section class="solutions-container section">
@@ -122,6 +124,7 @@
       <section class="activities-container section">
         <div class="the-third-container container">
           <h2 class="secondary-title">What are we doing</h2>
+
           <ul class="activities-list list">
             <li class="activities-list-item">
               <img
@@ -524,5 +527,15 @@
         </div>
       </div>
     </footer>
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button type="button" class="modal-close-btn" data-modal-close>
+          <svg class="icon-modal-closing" width="8" height="8">
+            <use href="./images/icons.svg#icon-modal-closing"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
