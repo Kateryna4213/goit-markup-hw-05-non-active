@@ -12,6 +12,8 @@
   --secondary-accent-color: #e7e9fc;
   --hover-state-color: #404bbf;
   --icons-color: #8e8f99;
+  --transition-duration-and-func: background-color 250ms
+    cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 h1,
@@ -103,6 +105,28 @@ button {
   letter-spacing: 0.02em;
   color: var(--primary-text-color-theme-light);
   padding: 24px 0;
+}
+
+.navigation-list-link-current-page-studio::after {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 48px;
+  height: 4px;
+  background-color: var(--hover-state-color);
+  margin-top: 20px;
+  border-radius: 2px;
+}
+
+.navigation-list-link-current-page-portfolio::after {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 66px;
+  height: 4px;
+  background-color: var(--hover-state-color);
+  margin-top: 20px;
+  border-radius: 2px;
 }
 
 .navigation-list-link:hover,
@@ -203,7 +227,7 @@ button {
   padding: 16px 32px;
   min-width: 169px;
   height: 56px;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: var(--transition-duration-and-func);
 }
 
 .main-button:hover,
@@ -330,6 +354,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: var(--transition-duration-and-func);
 }
 .icons-section-four-list-item-link:hover,
 .icons-section-four-list-item-link:focus {
@@ -389,6 +414,8 @@ button {
   align-items: center;
   justify-content: center;
   color: var(--icons-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .customers-section-list-item-link:hover,
 .customers-section-list-item-link:focus {
@@ -458,6 +485,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: var(--transition-duration-and-func);
 }
 .footer-link:hover,
 .footer-link:focus {
@@ -471,6 +499,7 @@ button {
 
 .offers-list-item-link {
   display: block;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .offers-list-item-link:hover,
 .offers-list-item-link:focus {
@@ -503,6 +532,9 @@ button {
   min-width: 116px;
   padding: 12px 24px;
   flex-basis: calc((100%- 96px) / 5);
+  transition: var(--transition-duration-and-func),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .offers-btn:hover,
 .offers-btn:focus {
@@ -531,4 +563,29 @@ button {
   padding: 32px 16px;
   border: 1px solid #e7e9fc;
   border-top: none;
+  min-width: 360px;
+}
+.overlay {
+  background: #4d5ae5;
+  color: #f4f4fd;
+  padding-top: 40px;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-bottom: 164px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  transform: translateY(100%);
+}
+.offers-list-img-wrapper {
+  min-width: 360px;
+  position: relative;
+  overflow: hidden;
+}
+.offers-list-item-link:hover .overlay,
+.offers-list-item-link:focus .overlay {
+  transform: translate(0, 0);
 }
